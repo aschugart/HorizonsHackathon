@@ -10,11 +10,11 @@ The calendar aspect of FairSplit is based off code provided by [FullCalendar](ht
 
 ##Opportunities for Improvement
 Though only the basic funcionalities were implemented in the 24-hour time limit, there is much more that could be added to the web app. Some options include:
-+When clicking "send message," have that username appear as the "to" address, rather than having to retype it. This is critical and shameful that it has not been implemented.
-+Implement better security features, as well as a verification service through which a college email address is required.
-+Fix the "Add Event" form so that it's a modal rather than a whole new page.
-+Clean up the code, particularly the in-line styles that gets messy.
-+Add capabilities of choosing your college campus.
-+Allow more details to be added to each departure time, such as exact location (the quad is pretty far from the river, after all...) and have options to filter by these general locations (yard, river, quad)
-+Set up capability of deleting event once the car limit is reached.
-+Link messages to email with Sendgrid, perhaps, so that they come to your email instead.
++ When clicking "send message," have that username appear as the "to" address, rather than having to retype it. This is critical and shameful that it has not been implemented.
++ Implement better security features, as well as a verification service through which a college email address is required.
++ Fix the "Add Event" form so that it's a modal rather than a whole new page.
++ Clean up the code, particularly the in-line styles that gets messy.
++ Add capabilities of choosing your college campus.
++ Allow more details to be added to each departure time, such as exact location (the quad is pretty far from the river, after all...) and have options to filter by these general locations (yard, river, quad)
++ Set up capability of deleting event once the car limit is reached.
++ Link messages to email with Sendgrid, perhaps, so that they come to your email instead.
