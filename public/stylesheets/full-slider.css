@@ -4,6 +4,7 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
+
 html,
 body {
     height: 100%;
@@ -24,6 +25,8 @@ body {
     top: 50%;
     transform: translateY(-50%);
     bottom: initial;
+    background: rgba(0,0,0,0.7);
+    padding: 100px;
 }
 
 /* Background images are set within the HTML using inline CSS, not here */

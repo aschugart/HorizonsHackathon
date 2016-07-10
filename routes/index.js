@@ -5,6 +5,14 @@ var Event = require('../models/event')
 var Message = require('../models/message')
 
 
+router.get('/about', function(req,res,next){
+  res.render('about')
+})
+
+router.get('/process', function(req,res,next){
+  res.render('process')
+})
+
 /* GET home page. */
 router.use(function(req, res, next){
   if (!req.user) {
@@ -13,8 +21,6 @@ router.use(function(req, res, next){
     return next();
   }
 });
-
-
 
 router.get('/', function(req, res, next) {
 	Event.find(function(error, events){
@@ -31,7 +37,8 @@ router.get('/addevent', function(req,res,next){
 router.post('/addevent', function(req,res,next){
 	var ev = new Event({
       title: req.body.title,
-      start: req.body.start
+      start: req.body.start,
+      details: req.body.details
     });
     ev.save(function(err, event) {
       if (err) {
