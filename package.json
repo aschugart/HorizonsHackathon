@@ -1,13 +1,11 @@
 {
-  "name": "fairsplit",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www",
-    "test": "nodemon ./bin/www"
-  },
+  "name": "horizonshackathon",
+  "version": "1.0.0",
+  "description": "This is a project I worked on individually during the Horizons School of Technology 24-hour Hackathon. Based off tragic real-life experiences with a five-page Google Doc for the Harvard Class of 2018 arranging Uber rides, FairSplit was born. Every time spring break or Thanksgiving break or back-to-school or any major break arrives, posts pop up in the Facebook group: Who wants to split an Uber or UberPool? This solves that problem -- it's simple, quick, organized, and gets the job done in a matter of seconds.",
+  "main": "app.js",
   "dependencies": {
-    "body-parser": "~1.13.2",
+    "bootstrap": "^3.3.6",
+      "body-parser": "~1.13.2",
     "connect-mongo": "^1.2.1",
     "cookie-parser": "~1.3.5",
     "debug": "~2.2.0",
@@ -21,7 +19,20 @@
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-local": "^1.0.0",
-    "stripe": "^4.7.0",
-    "twilio": "^2.9.1"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "nodemon ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aschugart/HorizonsHackathon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aschugart/HorizonsHackathon/issues"
+  },
+  "homepage": "https://github.com/aschugart/HorizonsHackathon#readme"
 }
+
