@@ -3,8 +3,13 @@ var mongoose = require('mongoose');
 
 var eventSchema = mongoose.Schema({
 	title: String,
-	start: String,
-	details: String
+	start: Date,
+	details: String,
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'User'
+    }
 });
 
 

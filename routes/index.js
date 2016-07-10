@@ -23,7 +23,8 @@ router.use(function(req, res, next){
 });
 
 router.get('/', function(req, res, next) {
-	Event.find(function(error, events){
+	Event.find().exec(function(error, events){
+    console.log(events);
 		res.render('index', {
 			events: JSON.stringify(events)
 		})
@@ -37,10 +38,13 @@ router.get('/addevent', function(req,res,next){
 router.post('/addevent', function(req,res,next){
 	var ev = new Event({
       title: req.body.title,
-      start: req.body.start,
-      details: req.body.details
+      start: +(new Date(req.body.start0 + " " + req.body.start1)),
+      details: req.body.details,
+      userId: req.user._id
     });
     ev.save(function(err, event) {
+                console.log(req.body.title + "title")
+    console.log(ev.start + "start")
       if (err) {
         console.log(err);
         res.status(500).redirect('/addevent');
@@ -51,14 +55,13 @@ router.post('/addevent', function(req,res,next){
 })
 
 router.get('/details/:id', function(req,res,next){
-	Event.findById(req.params.id, function(err, event){
+	Event.findById(req.params.id).populate('userId').exec(function(err, event){
 		if(err) return next(err);
 		res.render('details', { event: event, user: req.user })
 	})
 })
 
 router.get('/message', function(req, res) {
-  res.header('X-XSS-Protection', 0);
   Message.find({
     to: req.user._id
   }).populate('from').exec(function(err, messages) {
@@ -123,7 +126,25 @@ router.post('/message', function(req, res) {
   }
 });
 
-
+router.post('/delete/:messageId', function(req, res) {
+  if (! req.params.messageId) {
+    res.status(400).render('message', {
+      user: req.user,
+      error: 'Message id missing'
+    });
+  } else {
+    Message.findByIdAndRemove(req.params.messageId, function(err) {
+      if (err) {
+        res.status(400).render('message', {
+          user: req.user,
+          error: err.errmsg
+        });
+      } else {
+        res.redirect('/message?success=Deleted!');
+      }
+    });
+  }
+});
 
 
 module.exports = router;

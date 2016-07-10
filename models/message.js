@@ -8,12 +8,12 @@
     to: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: 'user'
+      ref: 'User'
     },
     from: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: 'user'
+      ref: 'User'
     }
   })
 

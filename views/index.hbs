@@ -1,6 +1,7 @@
 <div style="padding: 50px">
 <h1><font color="#D7CEC7">Schedule a Time</font></h1>
 <a href="/addevent" class="btn btn-success" style="padding:10px 30pxpx; margin: 0px 0px 10px">Add Departure</a>
+<a href="/message" class="btn btn-success" style="padding:10px 30pxpx; margin: 0px 0px 10px">View Messages</a>
 <div id="calendar" style="background-color: #D7CEC7; padding: 30px"></div>
 </div>
 
@@ -19,7 +20,7 @@
 	$('#calendar').fullCalendar({
 	    events: {{{events}}},
 		eventMouseover: function(calEvent, jsEvent) {
-		    var tooltip = '<div class="tooltipevent" style="width:100px;height:20px;background:#ccc;position:absolute;z-index:10001;">' + calEvent.title + '</div>';
+		    var tooltip = '<div class="tooltipevent" style="width:100px;height:20px;background:#ccc;position:absolute;z-index:10001;">' + calEvent.details + '</div>';
 		    $("body").append(tooltip);
 		    $(this).mouseover(function(e) {
 		        $(this).css('z-index', 10000);
@@ -35,6 +36,7 @@
 		    console.log(element)
 		    console.log(event.id)
 		    element.attr('id', event._id);
+		    // element.attr('user-id', event._id);
 		},
 		eventMouseout: function(calEvent, jsEvent) {
 		    $(this).css('z-index', 8);
@@ -42,7 +44,8 @@
 		},
 		eventClick: function(calEvent, jsEvent, view){
 			window.location = "/details/" + this.id
-		}
+		},
+
     })
 
 });

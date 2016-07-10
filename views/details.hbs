@@ -1,17 +1,18 @@
 <div style="padding: 50px 300px;">
 <div style="border: 4px solid #76323F; padding: 20px">
 <h1 style="padding: 0px; margin: 0px"><center>Departure Details</center></h1>
+<h2><center>{{event.title}}</center></h2>
 <br>
 <ul>
-<li><h3>You'll be traveling with {{event.title}}</h3>
+<li><h3>You'll be traveling with {{event.userId.username}}</h3>
 <li><h3>Time of Departure: {{event.start}}</h3>
 <br>
-<li><p>More details to consider: {{event.details}}</p>
+<li><p>Other details to consider: {{event.details}}</p>
 <!-- <p>{{user}}</p> -->
 <br>
 </ul>
 <center><h2>Ready to split your fare? You're just one message away!</h2>
 <br>
-<a href="/message" class="btn btn-success">Send message to {{user.username}}</a></center>
+<a href="/message" class="btn btn-success">Send message to {{event.userId.username}}</a></center>
 </div>
 </div>
